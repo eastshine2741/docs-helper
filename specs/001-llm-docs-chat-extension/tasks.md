@@ -17,18 +17,18 @@
 
 **Purpose**: Project initialization and Chrome extension structure
 
-- [ ] T001 Initialize Node.js project with package.json and TypeScript configuration
-- [ ] T002 Install core dependencies: react, react-dom, typescript, vite, @crxjs/vite-plugin
-- [ ] T003 [P] Install UI dependencies: @chakra-ui/react, @emotion/react, @emotion/styled, framer-motion
-- [ ] T004 [P] Install markdown dependencies: react-markdown, react-syntax-highlighter, @types/react-syntax-highlighter
-- [ ] T005 [P] Install LLM SDK dependencies: @anthropic-ai/sdk, @google/generative-ai
-- [ ] T006 [P] Install dev dependencies: @types/chrome
-- [ ] T007 Configure vite.config.ts for Chrome extension with @crxjs/vite-plugin and multiple entry points
-- [ ] T009 Configure tsconfig.json for TypeScript 5.x with React JSX support
-- [ ] T010 Create manifest.json for Chrome Extension Manifest V3 with content_scripts, background, and options_page
-- [ ] T011 Create project directory structure: src/{content,options,background,shared}, public/
-- [ ] T012 [P] Add extension icons to public/icons/ (16x16, 48x48, 128x128)
-- [ ] T013 [P] Create .gitignore for node_modules, dist, and IDE files
+- [X] T001 Initialize Node.js project with package.json and TypeScript configuration
+- [X] T002 Install core dependencies: react, react-dom, typescript, vite, @crxjs/vite-plugin
+- [X] T003 [P] Install UI dependencies: @chakra-ui/react, @emotion/react, @emotion/styled, framer-motion
+- [X] T004 [P] Install markdown dependencies: react-markdown, react-syntax-highlighter, @types/react-syntax-highlighter
+- [X] T005 [P] Install LLM SDK dependencies: @anthropic-ai/sdk, @google/generative-ai
+- [X] T006 [P] Install dev dependencies: @types/chrome
+- [X] T007 Configure vite.config.ts for Chrome extension with @crxjs/vite-plugin and multiple entry points
+- [X] T009 Configure tsconfig.json for TypeScript 5.x with React JSX support
+- [X] T010 Create manifest.json for Chrome Extension Manifest V3 with content_scripts, background, and options_page
+- [X] T011 Create project directory structure: src/{content,options,background,shared}, public/
+- [X] T012 [P] Add extension icons to public/icons/ (16x16, 48x48, 128x128)
+- [X] T013 [P] Create .gitignore for node_modules, dist, and IDE files
 
 ---
 
@@ -38,21 +38,21 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T015 [P] Define ChatRoom type in src/shared/types/chatRoom.ts
-- [ ] T016 [P] Define Message type in src/shared/types/message.ts
-- [ ] T017 [P] Define TextSelection type in src/shared/types/textSelection.ts
-- [ ] T018 [P] Define LLMModel type and constants in src/shared/types/llmModel.ts
-- [ ] T019 [P] Define UserSettings type in src/shared/types/userSettings.ts
-- [ ] T020 [P] Define message passing types in src/shared/types/messaging.ts
-- [ ] T021 [P] Create LLM provider constants in src/shared/constants/llmProviders.ts
-- [ ] T022 Implement type-safe Chrome Storage wrapper in src/shared/utils/storage.ts
-- [ ] T023 [P] Implement XPATH calculation utilities in src/shared/utils/xpath.ts
-- [ ] T024 Create background service worker entry point in src/background/index.ts
-- [ ] T025 Implement message handler routing in src/background/messageHandler.ts
-- [ ] T026 [P] Implement Claude LLM service in src/background/services/claudeService.ts
-- [ ] T027 [P] Implement Gemini LLM service in src/background/services/geminiService.ts
-- [ ] T028 Implement LLM factory in src/background/services/llmFactory.ts
-- [ ] T029 Implement API request handler in src/background/api.ts for message passing
+- [X] T015 [P] Define ChatRoom type in src/shared/types/chatRoom.ts
+- [X] T016 [P] Define Message type in src/shared/types/message.ts
+- [X] T017 [P] Define TextSelection type in src/shared/types/textSelection.ts
+- [X] T018 [P] Define LLMModel type and constants in src/shared/types/llmModel.ts
+- [X] T019 [P] Define UserSettings type in src/shared/types/userSettings.ts
+- [X] T020 [P] Define message passing types in src/shared/types/messaging.ts
+- [X] T021 [P] Create LLM provider constants in src/shared/constants/llmProviders.ts
+- [X] T022 Implement type-safe Chrome Storage wrapper in src/shared/utils/storage.ts
+- [X] T023 [P] Implement XPATH calculation utilities in src/shared/utils/xpath.ts
+- [X] T024 Create background service worker entry point in src/background/index.ts
+- [X] T025 Implement message handler routing in src/background/messageHandler.ts
+- [X] T026 [P] Implement Claude LLM service in src/background/services/claudeService.ts
+- [X] T027 [P] Implement Gemini LLM service in src/background/services/geminiService.ts
+- [X] T028 Implement LLM factory in src/background/services/llmFactory.ts
+- [X] T029 Implement API request handler in src/background/api.ts for message passing
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 

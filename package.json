@@ -7,14 +7,38 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "type-check": "tsc --noEmit",
-    "test": "vitest",
-    "test:watch": "vitest --watch",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
     "lint": "eslint src --ext ts,tsx",
     "format": "prettier --write \"src/**/*.{ts,tsx}\""
   },
-  "keywords": ["chrome-extension", "llm", "documentation", "assistant"],
+  "keywords": [
+    "chrome-extension",
+    "llm",
+    "documentation",
+    "assistant"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.2",
+    "@chakra-ui/icons": "^2.2.4",
+    "@chakra-ui/react": "^3.30.0",
+    "@crxjs/vite-plugin": "^2.3.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@google/generative-ai": "^0.24.1",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@vitejs/plugin-react": "^5.1.2",
+    "framer-motion": "^12.23.26",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^16.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.32",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3"
+  }
 }

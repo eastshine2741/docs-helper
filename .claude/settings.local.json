@@ -6,7 +6,11 @@
       "Bash(ls:*)",
       "Bash(powershell.exe -ExecutionPolicy Bypass -File \".specify/scripts/powershell/create-new-feature.ps1\" -Json -Number 1 -ShortName \"llm-docs-chat-extension\")",
       "Bash(powershell.exe:*)",
-      "Bash(npm init:*)"
+      "Bash(npm init:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npm run build:*)"
     ]
   }
 }
