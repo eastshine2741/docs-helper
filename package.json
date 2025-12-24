@@ -1,0 +1,20 @@
+{
+  "name": "docschat",
+  "version": "1.0.0",
+  "description": "DocsHelper - LLM-Powered Documentation Assistant Chrome Extension",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "type-check": "tsc --noEmit",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src --ext ts,tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
+  },
+  "keywords": ["chrome-extension", "llm", "documentation", "assistant"],
+  "author": "",
+  "license": "ISC"
+}
