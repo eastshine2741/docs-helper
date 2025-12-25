@@ -1,9 +1,10 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import type { ChatRoom } from '../../shared/types/chatRoom';
 import type { Message } from '../../shared/types/message';
 import type { TextSelection } from '../../shared/types/textSelection';
 import type { LLMModelType } from '../../shared/types/llmModel';
 import { ChatRoomManager } from '../services/chatRoomManager';
+import { Storage } from '../../shared/utils/storage';
 
 interface UseChatRoomsReturn {
   chatRooms: ChatRoom[];
@@ -18,10 +19,65 @@ interface UseChatRoomsReturn {
 
 /**
  * Hook for managing multiple chat rooms
- * Provides CRUD operations and state management
+ * Provides CRUD operations and state management with persistence
  */
 export function useChatRooms(): UseChatRoomsReturn {
   const [chatRooms, setChatRooms] = useState<ChatRoom[]>([]);
+  const [isInitialized, setIsInitialized] = useState(false);
+  const pageUrl = window.location.href;
+
+  // Load chat rooms from storage on mount
+  useEffect(() => {
+    const loadChatRooms = async () => {
+      try {
+        const stored = await Storage.getChatRooms(pageUrl);
+
+        // Validate XPATH still exists in DOM
+        const validRooms = stored.filter((room) => {
+          try {
+            const result = document.evaluate(
+              room.xpath,
+              document,
+              null,
+              XPathResult.FIRST_ORDERED_NODE_TYPE,
+              null
+            );
+            return result.singleNodeValue !== null;
+          } catch {
+            return false;
+          }
+        });
+
+        setChatRooms(validRooms);
+        setIsInitialized(true);
+
+        // Clean up invalid rooms from storage
+        if (validRooms.length !== stored.length) {
+          await Storage.saveChatRooms(pageUrl, validRooms);
+        }
+      } catch (error) {
+        console.error('[DocsChat] Failed to load chat rooms:', error);
+        setIsInitialized(true);
+      }
+    };
+
+    loadChatRooms();
+  }, [pageUrl]);
+
+  // Persist chat rooms to storage whenever they change
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    const saveChatRooms = async () => {
+      try {
+        await Storage.saveChatRooms(pageUrl, chatRooms);
+      } catch (error) {
+        console.error('[DocsChat] Failed to save chat rooms:', error);
+      }
+    };
+
+    saveChatRooms();
+  }, [chatRooms, pageUrl, isInitialized]);
 
   const createChatRoom = useCallback(
     (selection: TextSelection, model: LLMModelType): ChatRoom | null => {

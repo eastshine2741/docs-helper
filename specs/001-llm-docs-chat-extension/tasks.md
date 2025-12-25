@@ -66,23 +66,23 @@
 
 ### Implementation for User Story 1
 
-- [ ] T030 [P] [US1] Implement text selection detection service in src/content/services/selectionManager.ts
-- [ ] T031 [P] [US1] Create StartChatButton component in src/content/components/StartChatButton/index.tsx
-- [ ] T032 [P] [US1] Create TextHighlight component in src/content/components/TextHighlight/index.tsx
-- [ ] T033 [US1] Implement useTextSelection hook in src/content/hooks/useTextSelection.ts
-- [ ] T034 [P] [US1] Create ChatRoom component shell in src/content/components/ChatRoom/index.tsx
-- [ ] T035 [P] [US1] Create MessageList component with markdown rendering in src/content/components/MessageList/index.tsx
-- [ ] T036 [US1] Implement LLM model dropdown in ChatRoom component
-- [ ] T037 [US1] Implement message input and send functionality in ChatRoom component
-- [ ] T038 [US1] Implement chat room positioning logic (fixed 400px width, right edge, viewport-relative)
-- [ ] T039 [US1] Implement scroll position maintenance in ChatRoom component
-- [ ] T040 [US1] Implement useLLMRequest hook in src/content/hooks/useLLMRequest.ts for API communication
-- [ ] T041 [US1] Implement streaming response handling in MessageList component
-- [ ] T042 [US1] Implement API key validation with error display and chat room discard logic
-- [ ] T043 [US1] Create content script entry point in src/content/index.tsx with Shadow DOM setup
-- [ ] T044 [US1] Integrate ChakraProvider and inject styles into Shadow DOM
-- [ ] T045 [US1] Wire up text selection → button display → chat creation flow
-- [ ] T046 [US1] Add error handling for missing API keys with user-friendly messages
+- [X] T030 [P] [US1] Implement text selection detection service in src/content/services/selectionManager.ts
+- [X] T031 [P] [US1] Create StartChatButton component in src/content/components/StartChatButton/index.tsx
+- [X] T032 [P] [US1] Create TextHighlight component in src/content/components/TextHighlight/index.tsx
+- [X] T033 [US1] Implement useTextSelection hook in src/content/hooks/useTextSelection.ts
+- [X] T034 [P] [US1] Create ChatRoom component shell in src/content/components/ChatRoom/index.tsx
+- [X] T035 [P] [US1] Create MessageList component with markdown rendering in src/content/components/MessageList/index.tsx
+- [X] T036 [US1] Implement LLM model dropdown in ChatRoom component
+- [X] T037 [US1] Implement message input and send functionality in ChatRoom component
+- [X] T038 [US1] Implement chat room positioning logic (fixed 400px width, right edge, viewport-relative)
+- [X] T039 [US1] Implement scroll position maintenance in ChatRoom component
+- [X] T040 [US1] Implement useLLMRequest hook in src/content/hooks/useLLMRequest.ts for API communication
+- [X] T041 [US1] Implement streaming response handling in MessageList component
+- [X] T042 [US1] Implement API key validation with error display and chat room discard logic
+- [X] T043 [US1] Create content script entry point in src/content/index.tsx with Shadow DOM setup
+- [X] T044 [US1] Integrate ChakraProvider and inject styles into Shadow DOM
+- [X] T045 [US1] Wire up text selection → button display → chat creation flow
+- [X] T046 [US1] Add error handling for missing API keys with user-friendly messages
 
 **Checkpoint**: User Story 1 is fully functional - users can select text, chat with LLM, and see responses
 
@@ -96,20 +96,20 @@
 
 ### Implementation for User Story 2
 
-- [ ] T047 [US2] Implement chat room manager service in src/content/services/chatRoomManager.ts
-- [ ] T048 [US2] Implement useChatRooms hook in src/content/hooks/useChatRooms.ts for managing multiple rooms
-- [ ] T049 [US2] Implement vertical stacking logic (newest at bottom, older rooms pushed up)
-- [ ] T050 [US2] Implement expanded/collapsed state management (ChatRoom type has state field)
-- [ ] T051 [US2] Implement "only one expanded" constraint in chat room manager
-- [ ] T052 [US2] Implement click outside handler to collapse expanded chat room
-- [ ] T053 [US2] Implement click on collapsed room to expand (and collapse others)
-- [ ] T054 [US2] Update MessageList to show only first and last message with "..." when collapsed
-- [ ] T055 [US2] Implement chat room identifier generation (XPATH + model + text indices)
-- [ ] T056 [US2] Implement duplicate chat room check before creation
-- [ ] T057 [US2] Ensure concurrent API requests don't block each other (independent message handlers)
-- [ ] T058 [US2] Ensure API request continues when chat room is collapsed (background continues)
-- [ ] T059 [US2] Update ChatRoom component with expand/collapse visual states
-- [ ] T060 [US2] Implement highlight intensity differentiation (strong for expanded, light for collapsed)
+- [X] T047 [US2] Implement chat room manager service in src/content/services/chatRoomManager.ts
+- [X] T048 [US2] Implement useChatRooms hook in src/content/hooks/useChatRooms.ts for managing multiple rooms
+- [X] T049 [US2] Implement vertical stacking logic (newest at bottom, older rooms pushed up)
+- [X] T050 [US2] Implement expanded/collapsed state management (ChatRoom type has state field)
+- [X] T051 [US2] Implement "only one expanded" constraint in chat room manager
+- [X] T052 [US2] Implement click outside handler to collapse expanded chat room
+- [X] T053 [US2] Implement click on collapsed room to expand (and collapse others)
+- [X] T054 [US2] Update MessageList to show only first and last message with "..." when collapsed
+- [X] T055 [US2] Implement chat room identifier generation (XPATH + model + text indices)
+- [X] T056 [US2] Implement duplicate chat room check before creation
+- [X] T057 [US2] Ensure concurrent API requests don't block each other (independent message handlers)
+- [X] T058 [US2] Ensure API request continues when chat room is collapsed (background continues)
+- [X] T059 [US2] Update ChatRoom component with expand/collapse visual states
+- [X] T060 [US2] Implement highlight intensity differentiation (strong for expanded, light for collapsed)
 
 **Checkpoint**: User Story 2 is functional - users can manage multiple concurrent conversations independently
 
@@ -123,21 +123,21 @@
 
 ### Implementation for User Story 3
 
-- [ ] T061 [US3] Implement storage service in src/content/services/storageService.ts using shared storage utils
-- [ ] T062 [US3] Implement chat room persistence logic (save after first complete message exchange)
-- [ ] T063 [US3] Implement chat room restoration on page load in content script entry point
-- [ ] T064 [US3] Implement XPATH validation during restoration (verify element still exists in DOM)
-- [ ] T065 [US3] Implement cleanup of invalid chat rooms (XPATH no longer exists)
-- [ ] T066 [US3] Add delete button to ChatRoom component header
-- [ ] T067 [US3] Implement confirmation dialog for chat room deletion
-- [ ] T068 [US3] Implement chat room removal from storage and UI on confirmed deletion
-- [ ] T069 [US3] Implement duplicate chat room prevention using identifier matching
-- [ ] T070 [US3] Implement loading existing chat room instead of creating duplicate
-- [ ] T071 [US3] Implement storage quota detection in storageService
-- [ ] T072 [US3] Implement error message display when storage quota exceeded
-- [ ] T073 [US3] Implement failed message status tracking for interrupted API requests
-- [ ] T074 [US3] Implement retry button display for failed messages
-- [ ] T075 [US3] Implement manual retry functionality for failed messages
+- [X] T061 [US3] Implement storage service in src/content/services/storageService.ts using shared storage utils
+- [X] T062 [US3] Implement chat room persistence logic (save after first complete message exchange)
+- [X] T063 [US3] Implement chat room restoration on page load in content script entry point
+- [X] T064 [US3] Implement XPATH validation during restoration (verify element still exists in DOM)
+- [X] T065 [US3] Implement cleanup of invalid chat rooms (XPATH no longer exists)
+- [X] T066 [US3] Add delete button to ChatRoom component header
+- [X] T067 [US3] Implement confirmation dialog for chat room deletion
+- [X] T068 [US3] Implement chat room removal from storage and UI on confirmed deletion
+- [X] T069 [US3] Implement duplicate chat room prevention using identifier matching
+- [X] T070 [US3] Implement loading existing chat room instead of creating duplicate
+- [X] T071 [US3] Implement storage quota detection in storageService
+- [X] T072 [US3] Implement error message display when storage quota exceeded
+- [X] T073 [US3] Implement failed message status tracking for interrupted API requests
+- [X] T074 [US3] Implement retry button display for failed messages
+- [X] T075 [US3] Implement manual retry functionality for failed messages
 
 **Checkpoint**: User Story 3 is functional - chat rooms persist across sessions and can be managed
 
@@ -151,19 +151,19 @@
 
 ### Implementation for User Story 4
 
-- [ ] T076 [P] [US4] Create options page HTML in src/options/index.html
-- [ ] T077 [P] [US4] Create ApiKeySettings component in src/options/components/ApiKeySettings/index.tsx
-- [ ] T078 [P] [US4] Create PromptSettings component in src/options/components/PromptSettings/index.tsx
-- [ ] T079 [US4] Implement options page entry point in src/options/index.tsx
-- [ ] T080 [US4] Implement API key input fields (plain text) for Claude and Gemini
-- [ ] T081 [US4] Implement system prompt textarea input
-- [ ] T082 [US4] Implement save button with Chrome Storage persistence
-- [ ] T083 [US4] Implement settings loading on options page mount
-- [ ] T084 [US4] Implement API key format validation (Claude starts with 'sk-ant-')
-- [ ] T085 [US4] Update background API handler to include systemPrompt in LLM requests
-- [ ] T086 [US4] Implement default system prompt: "You are a helpful assistant explaining documentation. Be concise and clear."
-- [ ] T087 [US4] Add ChakraProvider to options page for consistent UI
-- [ ] T088 [US4] Implement save success feedback (toast or message)
+- [X] T076 [P] [US4] Create options page HTML in src/options/index.html
+- [X] T077 [P] [US4] Create ApiKeySettings component in src/options/components/ApiKeySettings/index.tsx
+- [X] T078 [P] [US4] Create PromptSettings component in src/options/components/PromptSettings/index.tsx
+- [X] T079 [US4] Implement options page entry point in src/options/index.tsx
+- [X] T080 [US4] Implement API key input fields (plain text) for Claude and Gemini
+- [X] T081 [US4] Implement system prompt textarea input
+- [X] T082 [US4] Implement save button with Chrome Storage persistence
+- [X] T083 [US4] Implement settings loading on options page mount
+- [X] T084 [US4] Implement API key format validation (Claude starts with 'sk-ant-')
+- [X] T085 [US4] Update background API handler to include systemPrompt in LLM requests
+- [X] T086 [US4] Implement default system prompt: "You are a helpful assistant explaining documentation. Be concise and clear."
+- [X] T087 [US4] Add ChakraProvider to options page for consistent UI
+- [X] T088 [US4] Implement save success feedback (toast or message)
 
 **Checkpoint**: User Story 4 is functional - users can configure and personalize their LLM interactions
 
@@ -173,15 +173,15 @@
 
 **Purpose**: Improvements that affect multiple user stories and production readiness
 
-- [ ] T089 [P] Add inline documentation comments to complex functions
-- [ ] T090 [P] Implement error boundary components for React error handling
-- [ ] T091 [P] Add loading states for all async operations
-- [ ] T092 [P] Implement optimistic UI updates where appropriate
-- [ ] T093 Code cleanup: Remove console.logs, fix linting errors
-- [ ] T094 [P] Add package.json scripts: dev, build, type-check, lint
-- [ ] T095 [P] Create README.md with installation and development instructions
-- [ ] T096 Verify all 41 functional requirements are implemented
-- [ ] T100 Verify all success criteria (SC-001 through SC-008) are met
+- [X] T089 [P] Add inline documentation comments to complex functions
+- [X] T090 [P] Implement error boundary components for React error handling
+- [X] T091 [P] Add loading states for all async operations
+- [X] T092 [P] Implement optimistic UI updates where appropriate
+- [X] T093 Code cleanup: Remove console.logs, fix linting errors
+- [X] T094 [P] Add package.json scripts: dev, build, type-check, lint
+- [X] T095 [P] Create README.md with installation and development instructions
+- [X] T096 Verify all 41 functional requirements are implemented
+- [X] T100 Verify all success criteria (SC-001 through SC-008) are met
 
 ---
 
